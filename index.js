@@ -128,6 +128,7 @@ app.use(function (req, res) {
     proxy.web(req, res, {buffer: bufferStream});
 });
 
+  console.log(credentials);
 proxy.on('proxyReq', function (proxyReq, req) {
     var endpoint = new AWS.Endpoint(ENDPOINT);
     var request = new AWS.HttpRequest(endpoint);
@@ -140,6 +141,7 @@ proxy.on('proxyReq', function (proxyReq, req) {
     request.headers['Host'] = ENDPOINT;
 
     var signer = new AWS.Signers.V4(request, 'es');
+  console.log(credentials);
     signer.addAuthorization(credentials, new Date());
 
     proxyReq.setHeader('Host', request.headers['Host']);
