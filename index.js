@@ -154,7 +154,8 @@ proxy.on('proxyRes', function (proxyReq, req, res) {
     }
 });
 
-http.createServer(app).listen(PORT, BIND_ADDRESS);
+http.createServer(app).listen(process.env.PORT || PORT)
+  // .listen(PORT, BIND_ADDRESS);
 
 if(!argv.s) {
     console.log(figlet.textSync('AWS ES Proxy!', {
