@@ -58,9 +58,9 @@ var argv = yargs.argv;
 
 var ENDPOINT = process.env.ENDPOINT || argv._[0];
 console.log("**********************************");
-console.log(ENDPOINT);
-console.log(AWS_ACCESS_KEY_ID);
-console.log(AWS_SECRET_ACCESS_KEY);
+console.log(process.env.ENDPOINT);
+console.log(process.env.AWS_ACCESS_KEY_ID);
+console.log(process.env.AWS_SECRET_ACCESS_KEY);
 
 if (!ENDPOINT) {
     yargs.showHelp();
