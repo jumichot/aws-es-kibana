@@ -66,7 +66,7 @@ https://search-kolimmo-search-7vkv4hk2hrswxxwe55pr7kxrl4.eu-west-1.es.amazonaws.
 
 // Try to infer the region if it is not provided as an argument.
 var REGION = argv.r;
-var REGION = "eu-central-1";
+var REGION = "us-east-1";
 if (!REGION) {
     var m = ENDPOINT.match(/\.([^.]+)\.es\.amazonaws\.com\.?$/);
     if (m) {
@@ -93,7 +93,6 @@ console.log(process.env.AWS_ACCESS_KEY_ID);
 console.log(process.env.AWS_SECRET_ACCESS_KEY);
 console.log(BIND_ADDRESS);
 console.log(PORT);
-console.log(REGION);
 var credentials;
 var chain = new AWS.CredentialProviderChain();
 chain.resolve(function (err, resolved) {
