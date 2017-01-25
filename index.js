@@ -57,10 +57,6 @@ var yargs = require('yargs')
 var argv = yargs.argv;
 
 var ENDPOINT = process.env.ENDPOINT || argv._[0];
-console.log("**********************************");
-console.log(process.env.ENDPOINT);
-console.log(process.env.AWS_ACCESS_KEY_ID);
-console.log(process.env.AWS_SECRET_ACCESS_KEY);
 
 if (!ENDPOINT) {
     yargs.showHelp();
@@ -91,6 +87,12 @@ if (!TARGET.match(/^https?:\/\//)) {
 var BIND_ADDRESS = argv.b;
 var PORT = argv.p;
 
+console.log(process.env.ENDPOINT);
+console.log("**********************************");
+console.log(process.env.AWS_ACCESS_KEY_ID);
+console.log(process.env.AWS_SECRET_ACCESS_KEY);
+console.log(BIND_ADDRESS);
+console.log(PORT);
 var credentials;
 var chain = new AWS.CredentialProviderChain();
 chain.resolve(function (err, resolved) {
