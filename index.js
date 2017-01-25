@@ -57,14 +57,20 @@ var yargs = require('yargs')
 var argv = yargs.argv;
 
 var ENDPOINT = process.env.ENDPOINT || argv._[0];
+console.log("**********************************");
+console.log(ENDPOINT);
+console.log(AWS_ACCESS_KEY_ID);
+console.log(AWS_SECRET_ACCESS_KEY);
 
 if (!ENDPOINT) {
     yargs.showHelp();
     process.exit(1);
 }
+https://search-kolimmo-search-7vkv4hk2hrswxxwe55pr7kxrl4.eu-west-1.es.amazonaws.com/
 
 // Try to infer the region if it is not provided as an argument.
 var REGION = argv.r;
+var REGION = "eu-west-1";
 if (!REGION) {
     var m = ENDPOINT.match(/\.([^.]+)\.es\.amazonaws\.com\.?$/);
     if (m) {
